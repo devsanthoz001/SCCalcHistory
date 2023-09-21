@@ -1,3 +1,5 @@
+using ProjectCalculator;
+
 namespace ComputerTest;
 
 public partial class CalculatorHistoryTests

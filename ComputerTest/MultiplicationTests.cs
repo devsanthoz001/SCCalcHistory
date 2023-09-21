@@ -1,3 +1,5 @@
+using ProjectCalculator;
+
 public class MultiplicationTests
 {
     [Fact]

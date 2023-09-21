@@ -1,3 +1,5 @@
+using ProjectCalculator;
+
 public partial class AdditionTests
 {
     [Fact]
