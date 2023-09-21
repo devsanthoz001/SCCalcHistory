@@ -1,0 +1,40 @@
+@page "/calculator"
+
+<PageTitle>Calculator</PageTitle>
+
+<h1>Type in your calculation and see the results </h1>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">@UserHasTyped</div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"><button type="button" class="btn btn-danger" @onclick="DeleteCalculatorHistory">DH</button></div>
+        <div class="col"><button type="button" class="btn btn-warning" @onclick="ClearUserEntry">C</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="UserPressedZero">0</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressed("+"))">+</button></div>
+    </div>
+     <div class="row">
+        <div class="col"><button type="button" class="btn btn-secondary"  @onclick="@(e => ButtonPressed("1"))">1</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("2"))">2</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("3"))">3</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressed("-"))">-</button></div>
+    </div>
+     <div class="row">
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("4"))">4</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("5"))">5</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("6"))">6</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressed("*"))">*</button></div>
+    </div>
+     <div class="row">
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("7"))">7</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("8"))">8</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("9"))">9</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressed("/"))">/</button></div>
+    </div>
+    
+    
+    
+</div>
