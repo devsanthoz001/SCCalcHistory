@@ -1,3 +1,4 @@
+namespace ProjectCalculator;
 public partial class Calculator
 {
     string calculatorHistory = "";
