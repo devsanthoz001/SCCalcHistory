@@ -14,25 +14,25 @@
         <div class="col"><button type="button" class="btn btn-danger" @onclick="DeleteCalculatorHistory">DH</button></div>
         <div class="col"><button type="button" class="btn btn-warning" @onclick="ClearUserEntry">C</button></div>
         <div class="col"><button type="button" class="btn btn-secondary" @onclick="UserPressedZero">0</button></div>
-        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressed("+"))">+</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressedOperator("+"))">+</button></div>
     </div>
      <div class="row">
-        <div class="col"><button type="button" class="btn btn-secondary"  @onclick="@(e => ButtonPressed("1"))">1</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("2"))">2</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("3"))">3</button></div>
-        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressed("-"))">-</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary"  @onclick="@(e => ButtonPressedNumber("1"))">1</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressedNumber("2"))">2</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressedNumber("3"))">3</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressedOperator("-"))">-</button></div>
     </div>
      <div class="row">
-        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("4"))">4</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("5"))">5</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("6"))">6</button></div>
-        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressed("*"))">*</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressedNumber("4"))">4</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressedNumber("5"))">5</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressedNumber("6"))">6</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressedOperator("*"))">*</button></div>
     </div>
      <div class="row">
-        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("7"))">7</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("8"))">8</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressed("9"))">9</button></div>
-        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressed("/"))">/</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressedNumber("7"))">7</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressedNumber("8"))">8</button></div>
+        <div class="col"><button type="button" class="btn btn-secondary" @onclick="@(e => ButtonPressedNumber("9"))">9</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" @onclick="@(e => ButtonPressedOperator("/"))">/</button></div>
     </div>
     
     
