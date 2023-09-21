@@ -1,4 +1,4 @@
-public partial class AdditionTest
+public partial class AdditionTests
 {
     [Fact]
     public void CheckIf65Plus15Is80Test()
