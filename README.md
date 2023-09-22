@@ -10,7 +10,7 @@ how to run UI project?
 dotnet run --project ComputerUI/ComputerUI.csproj 
 
  /*
-        UserPressedKey  RunningTotal    Equation       LastPressedKey
+        CurrentKeyPress  RunningTotal    Equation       LastPressedKey
         1                   1            1       
         2                   12           12      
         +                   12           12+
