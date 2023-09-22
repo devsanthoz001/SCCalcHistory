@@ -3,71 +3,106 @@
 <PageTitle>Calculator</PageTitle>
 
 <h1>Type in your calculation and see the results </h1>
+<style>
+    .btn {
+        width: 75px;
+        height: 75px;
+        padding: 2px;
+        margin: 2px;
+    }
+</style>
 
 <div class="container">
     <div class="row">
-        <div class="col"><button type="button" class="btn btn-danger" @onclick="DeleteCalculatorHistory">DH</button>
+        <div class="col">
+            <span><button type="button" class="btn btn-danger" @onclick="DeleteCalculatorHistory">D</button></span>
+            <span class="col"><button type="button" class="btn btn-warning" @onclick="ClearUserEntry">C</button></span>
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("0"))">0</button></span>
+            <span class="col"><button type="button" class="btn btn-primary"
+                    @onclick="@(e => ButtonPressedOperator("+"))">+</button></span>
         </div>
-        <div class="col"><button type="button" class="btn btn-warning" @onclick="ClearUserEntry">C</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("0"))">0</button>
-            </div>
-        <div class="col"><button type="button" class="btn btn-primary"
-            @onclick="@(e => ButtonPressedOperator("+"))">+</button></div>
     </div>
     <div class="row">
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("1"))">1</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("2"))">2</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("3"))">3</button></div>
-        <div class="col"><button type="button" class="btn btn-primary"
-            @onclick="@(e => ButtonPressedOperator("-"))">-</button>
-            </div>
+        <div class="col">
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("1"))">1</button></span>
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("2"))">2</button></span>
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("3"))">3</button></span>
+            <span class="col"><button type="button" class="btn btn-primary"
+                    @onclick="@(e => ButtonPressedOperator("-"))">-</button>
+            </span>
+        </div>
     </div>
     <div class="row">
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("4"))">4</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("5"))">5</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("6"))">6</button></div>
-        <div class="col"><button type="button" class="btn btn-primary"
-            @onclick="@(e => ButtonPressedOperator("*"))">*</button></div>
+        <div class="col">
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("4"))">4</button></span>
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("5"))">5</button></span>
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("6"))">6</button></span>
+            <span class="col"><button type="button" class="btn btn-primary"
+                    @onclick="@(e => ButtonPressedOperator("*"))">*</button></span>
+        </div>
     </div>
-    <div class="row">
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("7"))">7</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("8"))">8</button></div>
-        <div class="col"><button type="button" class="btn btn-secondary"
-            @onclick="@(e => ButtonPressedNumber("9"))">9</button></div>
-        <div class="col"><button type="button" class="btn btn-primary"
-            @onclick="@(e => ButtonPressedOperator("/"))">/</button></div>  
-    </div>
-</div>
 
-<div class="col"><button  type="button" class="btn btn-success"
-            @onclick="@(e => ButtonPressedOperatorEqualTo("="))">=</button> </div>
-
-<div class="container">
     <div class="row">
-        <div class="col">User Pressed</div>
-        <div class="col">Running Total</div>
-        <div class="col">Equation</div>
-        <div class="col">Last Pressed</div>
-        <div class="col">Operator</div>
-        <div class="col">LastNumber</div>
-        <div class="col">Calculation</div>
+        <div class="col">
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("7"))">7</button></span>
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("8"))">8</button></span>
+            <span class="col"><button type="button" class="btn btn-secondary"
+                    @onclick="@(e => ButtonPressedNumber("9"))">9</button></span>
+            <span class="col"><button type="button" class="btn btn-primary"
+                    @onclick="@(e => ButtonPressedOperator("/"))">/</button></span>
+        </div>
     </div>
     <div class="row">
-        <div class="col">@UserPressedKey</div>
-        <div class="col">@RunningTotal</div>
-        <div class="col">@Equation</div>
-        <div class="col">@LastPressedKey</div>
-        <div class="col">@OperatorEntered</div>
-        <div class="col">@LastNumber</div>
-        <div class="col">@Calculate</div>
+        <div class="col">
+            <span class="col"><button type="button" class="btn btn-success"
+                    @onclick="@(e => ButtonPressedOperatorEqualTo())">=</button> </span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th scope="col">User Pressed</th>
+                            <th scope="col">Running Total</th>
+                            <th scope="col">Equation</th>
+                            <th scope="col">Last Pressed</th>
+                            <th scope="col">Operator</th>
+                            <th scope="col">LastNumber</th>
+                            <th scope="col">Calculation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>@UserPressedKey
+                            </td>
+                            <td>@RunningTotal
+                            </td>
+                            <td>@Equation
+                            </td>
+                            <td>@LastPressedKey
+                            </td>
+                            <td>@OperatorEntered
+                            </td>
+                            <td>@LastNumber
+                            </td>
+                            <td>@Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

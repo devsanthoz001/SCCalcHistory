@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using ProjectCalculator;
 
 namespace ComputerUI.Pages;
@@ -10,16 +11,17 @@ public partial class CalculatorUI
     public string Equation { get; set; } = string.Empty;
     public string LastPressedKey { get; set; } = string.Empty;
     public string OperatorEntered { get; set; } = string.Empty;
-    public string Calculate { get; set; } = string.Empty;
+    public string Total { get; set; } = string.Empty;
 
     public void DeleteCalculatorHistory()
     {
-        RunningTotal = string.Empty;
+        RunningTotal = "0";
         UserPressedKey = string.Empty;
         Equation = string.Empty;
         LastPressedKey = string.Empty;
         OperatorEntered = string.Empty;
         LastNumber = string.Empty;
+        Total = string.Empty;
     }
     public void ClearUserEntry()
     {
@@ -27,24 +29,25 @@ public partial class CalculatorUI
     }
 
     public void ButtonPressedNumber(string buttonNumber)
-    {
+    {        
         Equation = Equation + buttonNumber;
         LastPressedKey = UserPressedKey;
         UserPressedKey = buttonNumber;
-        OperatorEntered = string.Empty;
-        RunningTotal = UserPressedKey + buttonNumber;
+        OperatorEntered = string.Empty;        
     }
 
     public void ButtonPressedOperator(string buttonOperation)
-    {
+    {        
         LastNumber = Equation;
         Equation = Equation + buttonOperation;
         LastPressedKey = UserPressedKey;
         UserPressedKey = buttonOperation;
         OperatorEntered = buttonOperation;
+
     }
-   public void ButtonPressedOperatorEqualTo(string equalToButton)
+   public void ButtonPressedOperatorEqualTo()
    {
-    Calculate = Equation;
+    //Calculate = Equation;
+    Total = Equation;
    }
 }
