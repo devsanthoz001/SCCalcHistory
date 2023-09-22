@@ -3,48 +3,48 @@ using ProjectCalculator;
 namespace ComputerUI.Pages;
 public partial class CalculatorUI
 {
-    Calculator calculatorInstance = new Calculator();   
-    public string UserHasTyped { get; set; } = string.Empty;
-    private string lastPressedKey = string.Empty;
+    Calculator calculatorInstance = new Calculator();
+    public string LastNumber { get; set; } = string.Empty;
+    public string RunningTotal { get; set; } = string.Empty;
+    public string UserPressedKey { get; set; } = string.Empty;
+    public string Equation { get; set; } = string.Empty;
+    public string LastPressedKey { get; set; } = string.Empty;
+    public string OperatorEntered { get; set; } = string.Empty;
+    public string Calculate { get; set; } = string.Empty;
+
     public void DeleteCalculatorHistory()
     {
-
+        RunningTotal = string.Empty;
+        UserPressedKey = string.Empty;
+        Equation = string.Empty;
+        LastPressedKey = string.Empty;
+        OperatorEntered = string.Empty;
+        LastNumber = string.Empty;
     }
     public void ClearUserEntry()
     {
-        UserHasTyped = string.Empty;
+        UserPressedKey = string.Empty;
     }
 
-    public void UserPressedZero()
-    {
-        UserHasTyped = UserHasTyped + "0";
-    }
-    public void UserPressedOne()
-    {
-        UserHasTyped = UserHasTyped + "1";
-    }
     public void ButtonPressedNumber(string buttonNumber)
-    {       
-        UserHasTyped = UserHasTyped + buttonNumber;
+    {
+        Equation = Equation + buttonNumber;
+        LastPressedKey = UserPressedKey;
+        UserPressedKey = buttonNumber;
+        OperatorEntered = string.Empty;
+        RunningTotal = UserPressedKey + buttonNumber;
     }
 
     public void ButtonPressedOperator(string buttonOperation)
-    {       
-        /*
-        UserPressedKey  RunningTotal    Equation
-        1                   1            1       
-        2                   12           12      
-        +                   12           12+
-        3                   3            12+3    
-        4                   34           23+34
-        -                   57           57-
-        2                   57           57-2
-        7                   57           57-27
-        =                   30
-        
-        
-        
-        */               
+    {
+        LastNumber = Equation;
+        Equation = Equation + buttonOperation;
+        LastPressedKey = UserPressedKey;
+        UserPressedKey = buttonOperation;
+        OperatorEntered = buttonOperation;
     }
-
+   public void ButtonPressedOperatorEqualTo(string equalToButton)
+   {
+    Calculate = Equation;
+   }
 }
